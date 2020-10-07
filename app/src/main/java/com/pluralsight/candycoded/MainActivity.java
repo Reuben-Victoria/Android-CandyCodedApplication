@@ -50,13 +50,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(detailIntent);
             }
         });
-        @Override
-                public boolean onOptionsItemSelected(MenuItem item)  {
-                Intent infoIntent = new Intent(this,infoActivity.class);
-                startActivity(infoIntent);
-                return super.onOptionsItemSelected(item);
 
-        }
+
+
 
 
         AsyncHttpClient client = new AsyncHttpClient();
@@ -104,5 +100,11 @@ public class MainActivity extends AppCompatActivity {
 
             db.insert(CandyEntry.TABLE_NAME, null, values);
         }
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent infoIntent = new Intent(this, InfoActivity.class);
+        startActivity(infoIntent);
+        return super.onOptionsItemSelected(item);
     }
 }
