@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -49,6 +50,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(detailIntent);
             }
         });
+        @Override
+                public boolean onOptionsItemSelected(MenuItem item)  {
+                Intent infoIntent = new Intent(this,infoActivity.class);
+                startActivity(infoIntent);
+                return super.onOptionsItemSelected(item);
+
+        }
+
 
         AsyncHttpClient client = new AsyncHttpClient();
         client.get("https://vast-brushlands-23089.herokuapp.com/main/api",
