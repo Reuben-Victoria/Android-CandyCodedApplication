@@ -5,11 +5,11 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import junit.framework.Assert;
+import androidx.appcompat.app.AppCompatActivity;
 
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -162,9 +162,8 @@ public class _2_StartTheGoogleMapsActivity {
                 new XMLTestHelpers.ViewContainer("@+id/text_view_address", "createMapIntent", "true");
         boolean address_set_correct =  viewContainers.contains(addressView);
 
-        Assert.assertTrue("In activity_info.xml, the TextView text_view_address does not have " +
-                        "the clickable and onClick properties set.",
-                address_set_correct);
+        Assert.assertNotNull("In activity_info.xml, the TextView text_view_address does not have " +
+                "the clickable and onClick properties set.", address_set_correct);
     }
 
     public ArrayList<XMLTestHelpers.ViewContainer> readLayoutXML(String layoutFileName) {
