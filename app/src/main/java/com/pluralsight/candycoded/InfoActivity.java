@@ -46,4 +46,6 @@ public class InfoActivity extends AppCompatActivity {
       startActivity(phoneIntent);
     }
 
+    public void startActivity(Intent eq) {
+    }
 }
